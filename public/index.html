@@ -1,1 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SafePay AI — Transaction Guard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<header>
+  <div class="brand"><div class="shield">S</div><div><b>SafePay <span>AI</span></b><small>WEB3 RISK INTELLIGENCE</small></div></div>
+  <div class="top-actions"><span class="pill demo">● DEMO MODE</span><span class="pill sol">◎ SOLANA</span><button class="ghost" onclick="scrollTo({top:0,behavior:'smooth'})">How it works</button></div>
+</header>
 
+<main>
+  <section class="hero">
+    <div class="eyebrow"><i></i> PRE-SIGN TRANSACTION SECURITY</div>
+    <h1>Know the risk.<br><em>Before you sign.</em></h1>
+    <p>SafePay AI translates blockchain risk intelligence into a decision layer people can understand — before they connect, sign, or send.</p>
+    <div class="tags"><span>WALLETS</span><span>TRANSACTIONS</span><span>CONTRACTS</span><span>AI EXPLANATIONS</span></div>
+  </section>
+
+  <section class="console">
+    <aside>
+      <label>RISK CENTER</label>
+      <button class="nav active"><strong>◇</strong><span><b>Wallet Risk</b><small>Address intelligence</small></span></button>
+      <button class="nav active2"><strong>↔</strong><span><b>Transaction Risk</b><small>Pre-sign review</small></span></button>
+      <button class="nav muted"><strong>◇</strong><span><b>Contract Risk</b><small>Coming next</small></span></button>
+      <button class="nav muted"><strong>↗</strong><span><b>URL / dApp Risk</b><small>Coming next</small></span></button>
+      <div class="side-line"></div>
+      <label>TOOLS</label>
+      <div class="tool">◉ Watchlist</div><div class="tool">◷ Scan History</div><div class="tool">⌘ API Docs</div><div class="tool">⚙ Settings</div>
+    </aside>
+
+    <div class="content">
+      <div class="section-head"><div><label>TRANSACTION GUARD</label><h2>Review before signing</h2></div><span class="ready">● Risk intelligence ready</span></div>
+
+      <div class="card form-card">
+        <div class="card-title">TRANSACTION DETAILS</div>
+        <div class="grid">
+          <label>FROM WALLET<input id="sender" value="4BqkwoA3Pk65hNw8GEGeQr14ZhMFwaLSTQ7nyGYtq7vo"></label>
+          <label>TO WALLET<input id="recipient" value="7xKXtg2CW87d7TXSDpbD54xKp6cWVyJ8WR2F7vG"></label>
+          <label>ASSET<select id="asset"><option>SOL</option><option>USDC</option><option>USDT</option></select></label>
+          <label>AMOUNT<input id="amount" type="number" min="0" step="0.01" value="2.45"></label>
+        </div>
+        <div class="notice">↳ Demo mode uses synthetic results. Live mode will send transaction context only to the configured DD/Webacy provider.</div>
+        <button class="analyze" onclick="analyze()">Analyze Transaction <span>→</span></button>
+      </div>
+
+      <div id="result" class="hidden">
+        <div class="result-head"><div><label>RISK ASSESSMENT</label><h3>Transaction Risk Report</h3></div><span class="badge">DEMO RESULT</span></div>
+        <div class="demo-note">Demo result: the score and signals below are synthetic UI data. They are not a DD/Webacy assessment.</div>
+        <div class="score-grid">
+          <div class="card score-card"><div class="score-ring"><div><strong id="score">60</strong><small>/100</small></div></div><b id="level" class="level">MEDIUM RISK</b><small>Composite transaction risk score</small></div>
+          <div class="card explanation"><div class="card-title">✦ AI EXPLANATION <small>DECISION SUPPORT</small></div><h3 id="ex-title">Review before signing</h3><p id="explain"></p><div class="action"><b>✓</b><span><strong>Recommended action</strong><small id="action"></small></span></div></div>
+        </div>
+        <div class="card signals"><div class="card-title">RISK SIGNALS <small id="signal-count"></small></div><div id="signal-list"></div></div>
+        <div class="card facts"><div class="card-title">TRANSACTION SUMMARY</div><div class="facts-grid">
+          <div><small>FROM</small><b id="f-sender"></b></div><div><small>TO</small><b id="f-recipient"></b></div><div><small>ASSET</small><b id="f-asset"></b></div><div><small>VALUE</small><b id="f-amount"></b></div>
+        </div><div class="buttons"><button class="ghost" onclick="newScan()">New scan</button><button class="primary" onclick="alert('Demo only: no transaction is signed or broadcast.')">Continue to signing →</button></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
